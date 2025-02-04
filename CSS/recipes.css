@@ -1,0 +1,369 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Navbar Styling (Glassmorphism Effect) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Change navbar background on scroll */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    padding: 5px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+    padding: 10px 15px;
+}
+
+.navbar-links a:hover {
+    color: #ff5722;
+    transform: scale(1.05);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    height: calc(100vh - 80px);
+    position: fixed;
+    left: 10px;
+    top: 80px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+/* Sidebar Headers */
+.sidebar h2 {
+    font-size: 1.3em;
+    color: #ff5722;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid #ff5722;
+    padding-bottom: 8px;
+}
+
+/* Sidebar Form Elements */
+.sidebar label {
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+}
+
+.sidebar select, .sidebar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar select:focus, .sidebar input:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.4);
+}
+
+/* Sidebar Buttons */
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+.sidebar button:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Page Content */
+.container {
+    margin-left: 300px;
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 100px; /* Ensure space below navbar */
+}
+
+/* Page Header */
+h1 {
+    font-size: 2em;
+    color: #222;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Recipe Grid */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+}
+
+/* Recipe Card */
+.recipe-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    position: relative;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    font-size: 1.3em;
+    margin: 10px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.recipe-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Buttons */
+.btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+.btn-back {
+    background-color: #007bff;
+    margin-top: 30px;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+.btn-details {
+    background-color: #28a745;
+}
+
+.btn-details:hover {
+    background-color: #218838;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding-bottom: 15px;
+    }
+
+    .container {
+        margin-left: 0;
+        margin-top: 100px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+.navbar {
+    position: fixed; /* Keep navbar fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 130px; /* Adjust logo size */
+    height: auto;
+    padding: 5px; /* Add padding for better visibility */
+    background-color: white; /* White background to separate from the transparent navbar */
+    border-radius: 3px; /* Optional: small rounded corners for the logo */
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Increased gap between items */
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em; /* Increased font size */
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 8px 12px;
+}
+
+.navbar-links a:hover {
+    color: #ff5722;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-btn {
+    padding: 10px 20px;
+    font-size: 1.2em; /* Increased font size */
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Fridge Cart Icon in Navbar */
+.fridge-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.fridge-cart img {
+    width: 40px;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

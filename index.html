@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPantry - AI Ingredient & Recipe Recommender</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="Videos/Background_Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+            <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+            <li><a href="/HTML/about.html">ABOUT</a></li>
+        </ul>
+
+        <!-- Fridge Mode Icon with Item Count -->
+        <div class="fridge-cart" onclick="goToDatabase()">
+            <img src="Images/fridge_icon.png" alt="Fridge Icon">
+            <span id="cart-count">0</span>
+            <div class="fridge-dropdown">
+                <p>View your fridge inventory</p>
+            </div>
+        </div>
+
+
+
+        <div class="auth-buttons">
+            <a href="/HTML/login.html"><button class="auth-btn" id="login">Log In</button></a>
+            <a href="/HTML/signup.html"><button class="auth-btn" id="signup">Sign Up</button></a>
+        </div>
+    </nav>
+
+    <!-- Centered Content -->
+    <div class="container">
+        <h1>Welcome to SmartPantry</h1>
+        <p>Shop Smart. Waste Less. Thrive More</p>
+        <button class="btn" onclick="startCooking()">Start Cooking</button>
+    </div>
+    <!-- Dialogflow Chatbot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="SmartPantryBot" agent-id="ec6de32a-ad17-4660-903c-71b594eb8001"
+        language-code="en">
+    </df-messenger>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

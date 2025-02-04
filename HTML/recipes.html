@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendations</title>
+    <link rel="stylesheet" href="../CSS/recipes.css">
+    <script defer src="../JS/recipes.js"></script>
+</head>
+<body
+    style="background: url('../Images/Background_Img_2.jpg') no-repeat center center fixed; background-size: cover; background-color: #f8f9fa;">
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+            <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+            <li><a href="/HTML/about.html">ABOUT</a></li>
+        </ul>
+
+        <!-- Fridge Mode Icon with Item Count -->
+        <div class="fridge-cart" onclick="goToDatabase()">
+            <img src="/Images/fridge_icon.png" alt="Fridge Icon">
+            <span id="cart-count">0</span>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="/HTML/login.html"><button class="auth-btn" id="login">Log In</button></a>
+            <a href="/HTML/signup.html"><button class="auth-btn" id="signup">Sign Up</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Recommended Recipes</h1>
+
+        <!-- Sidebar Filter Menu -->
+        <div class="sidebar">
+            <h2>Filters</h2>
+
+            <label for="diet-filter">Dietary Preference:</label>
+            <select id="diet-filter">
+                <option value="">All</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="non-veg">Non-Vegetarian</option>
+            </select>
+
+            <label for="calorie-filter">Low-Calorie:</label>
+            <select id="calorie-filter">
+                <option value="">All</option>
+                <option value="low">Less than 400 Calories</option>
+            </select>
+
+            <label for="missing-filter">Missing Ingredients:</label>
+            <select id="missing-filter">
+                <option value="">All</option>
+                <option value="5">Less than 5</option>
+                <option value="8">Less than 8</option>
+                <option value="10">Less than 10</option>
+            </select>
+
+            <label for="time-filter">Max Prep Time (Minutes):</label>
+            <input type="range" id="time-filter" min="5" max="120" step="5" value="60" oninput="updateTimeLabel()">
+            <span id="time-value">60 mins</span>
+
+            <label for="food-type-filter">Food Type:</label>
+            <select id="food-type-filter">
+                <option value="">All</option>
+                <option value="appetizer">Starter</option>
+                <option value="main course">Entrée</option>
+                <option value="dessert">Dessert</option>
+            </select>
+            <button class="btn" onclick="fetchRecipes()">Apply Filters</button>
+        </div>
+
+        <!-- Recipe Display -->
+        <div id="recipes-container" class="recipes-grid"></div>
+
+        <button class="btn btn-back" onclick="goToDatabase()">Back to Database</button>
+    </div>
+</body>
+</html>

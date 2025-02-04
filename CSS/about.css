@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ✅ Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: bisque;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-right: 100px;
+}
+
+.navbar-links a:hover, .navbar-links a.active {
+    background: #ff5722;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 120px; /* Fixed width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    max-height: 50px; /* Prevents it from getting too big */
+}
+
+/* ✅ Hero Section */
+.hero {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    margin-top: 85px;
+}
+
+.hero-content h1 span {
+    color: black;
+}
+
+
+/* ✅ Sections */
+.vision, .goals, .importance, .stats, .cta {
+    padding: 50px 20px;
+    background: white;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Goals List */
+.goals ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+.goals ul li {
+    padding: 10px;
+}
+
+/* ✅ Stats */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #ff5722;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ✅ CTA */
+.cta {
+    background: #ff5722;
+    padding: 30px;
+    color: white;
+}
+
+.btn {
+    background: white;
+    color: #ff5722;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}

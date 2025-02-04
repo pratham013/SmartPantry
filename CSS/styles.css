@@ -1,0 +1,356 @@
+/* General Page Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Background Video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Content Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45); /* Slightly darker overlay for contrast */
+    z-index: 0;
+}
+
+/* Centered Content Box */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7); /* Darker contrast */
+    padding: 40px;
+    border-radius: 12px;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Header */
+h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+/* CTA Button */
+.btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.08);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* Navbar Links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+}
+
+.navbar-links a:hover {
+    color: #ff5722;
+    transform: scale(1.05);
+}
+
+/* Logo */
+.logo-container img {
+    width: 140px;
+    height: auto;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-btn {
+    padding: 8px 15px;
+    font-size: 1.1em;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.auth-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Fridge Cart Icon */
+.fridge-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Expiring Items Notification */
+.fridge-cart .expiry-alert {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Alert Animation */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.fridge-cart img {
+    width: 35px;
+    height: auto;
+}
+
+/* Cart Count */
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .navbar-links {
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+}
+
+/* Fridge Dropdown */
+.fridge-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    padding: 10px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    top: 40px;
+    right: 0;
+}
+
+.fridge-cart:hover .fridge-dropdown {
+    display: block;
+}
+
+/* 🔔 Expiring Item Alerts */
+.notification-popup {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    background: #ff5722;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    max-width: 320px;
+    font-size: 1em;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.notification-popup ul {
+    padding-left: 15px;
+    margin: 10px 0;
+}
+
+.notification-popup button {
+    background: white;
+    color: #ff5722;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.notification-popup button:hover {
+    background: #ffd4c4;
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Chatbot Styling */
+df-messenger {
+    --df-messenger-bot-message: #ff5722; /* Bot chat bubble */
+    --df-messenger-button-titlebar-color: #ff5722; /* Chatbot header */
+    --df-messenger-button-titlebar-font-color: white;
+    --df-messenger-chat-background-color: white;
+    --df-messenger-font-color: black;
+    --df-messenger-input-placeholder-font-color: gray;
+    --df-messenger-send-icon: #ff5722;
+
+    /* ✅ Better Positioning */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* ✅ Chat Window Enhancements */
+df-messenger::part(chat-container) {
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Chatbot Header */
+df-messenger::part(titlebar) {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ✅ Bot Messages */
+df-messenger::part(bot-message) {
+    background-color: #ff5722 !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 10px 15px !important;
+    font-size: 1em !important;
+}
+
+/* ✅ User Messages */
+df-messenger::part(user-message) {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+    border-radius: 12px !important;
+    padding: 10px 15px !important;
+    font-size: 1em !important;
+}
+
+/* ✅ Input Box */
+df-messenger::part(text-input) {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1em;
+}
+
+/* ✅ Send Button */
+df-messenger::part(send-button) {
+    background: #ff5722 !important;
+    color: white !important;
+    transition: background 0.3s ease-in-out;
+}
+
+df-messenger::part(send-button):hover {
+    background: #e64a19 !important;
+}

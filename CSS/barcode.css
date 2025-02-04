@@ -1,0 +1,213 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: url('../Images/Background_Img_7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ✅ Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1717f1;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+}
+
+/* ✅ Fixed Logo */
+.logo-container img {
+    width: 120px;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+/* ✅ Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+    margin-right: 50px;
+}
+
+.navbar-links a:hover, .navbar-links a.active {
+    background: rgb(135, 199, 39);
+    color: black;
+}
+
+/* ✅ Scanner Container */
+#scanner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 120px;
+    padding: 30px;
+}
+
+/* ✅ Scanner Frame */
+#scanner-frame {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    border-radius: 12px;
+    border: 3px solid #ff5722;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ Video Stream */
+#interactive {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#scanner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+canvas.drawingBuffer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ✅ Buttons */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 14px 24px;
+    font-size: 1.2em;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* ✅ Barcode Result */
+#barcode-result {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+#barcode-data {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+/* ✅ Manual Barcode Entry */
+#manual-entry {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#manual-barcode {
+    width: 60%;
+    max-width: 350px;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #ff5722;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+#manual-barcode:focus {
+    border-color: #e64a19;
+}
+
+/* ✅ Submit Button */
+#manual-submit {
+    padding: 12px 18px;
+    font-size: 1.1em;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+#manual-submit:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #scanner-frame {
+        max-width: 90%;
+        height: 300px;
+    }
+
+    button {
+        width: 85%;
+    }
+}

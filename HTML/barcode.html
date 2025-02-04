@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Scanner - SmartPantry</title>
+    <link rel="stylesheet" href="/CSS/barcode.css">
+    <script src="https://unpkg.com/quagga/dist/quagga.min.js"></script>
+</head>
+
+<body style="background: url('../Images/Background_Img_7.jpg') no-repeat center center fixed; background-size: cover; background-color: #f8f9fa;">
+
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+            <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+            <li><a href="/HTML/about.html">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✅ Scanner Section -->
+    <div id="scanner-container">
+        <div id="scanner-frame">
+            <div id="interactive">
+                <video id="scanner-video" autoplay playsinline></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Buttons -->
+    <button id="start-button">Start Scanning</button>
+    <p id="barcode-result">Scanned Barcode: <span id="barcode-data">None</span></p>
+
+    <!-- ✅ Manual Barcode Entry -->
+    <div id="manual-entry">
+        <input type="text" id="manual-barcode" placeholder="Enter barcode manually">
+        <button id="manual-submit">Submit Barcode</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <script src="/JS/barcode.js"></script>
+</body>
+</html>

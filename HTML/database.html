@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fridge Inventory</title>
+    <link rel="stylesheet" href="../CSS/database.css">
+    <script defer src="../JS/database.js"></script>
+</head>
+<body
+    style="background: url('../Images/Background_Img_5.jpg') no-repeat center center fixed; background-size: cover; background-color: #f8f9fa;">
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <img src="../Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/index.html">HOME</a></li>
+                <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+                <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+                <li><a href="/HTML/about.html">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <div class="fridge-cart" onclick="goToDatabase()">
+                <img src="../Images/fridge_icon.png" alt="Fridge Icon">
+                <span id="cart-count">0</span>
+            </div>
+
+            <div class="auth-buttons">
+                <a href="/HTML/login.html"><button class="auth-btn" id="login">Log In</button></a>
+                <a href="/HTML/signup.html"><button class="auth-btn" id="signup">Sign Up</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>My Fridge Inventory 🛒</h1>
+
+        <div class="database-controls">
+            <button class="btn" onclick="addManually()">Add Manually</button>
+            <button class="btn" onclick="addMoreItems()">Add More Items</button>
+            <button class="btn btn-clear" onclick="clearDatabase()">Clear Inventory</button>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Expiration Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ingredient-list">
+                    <!-- Items load dynamically here -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Items Expiring Soon:</h2>
+        <div id="expiring-items"></div>
+
+        <button class="btn btn-recipe" onclick="goToRecipe()">Suggest Recipes</button>
+    </div>
+</body>
+</html>

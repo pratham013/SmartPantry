@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Ingredient Entry</title>
+    <link rel="stylesheet" href="../CSS/manual_entry.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script defer src="../JS/manual_entry.js"></script>
+</head>
+
+<body
+    style="background: url('../Images/Background_Img_6.jpg') no-repeat center center fixed; background-size: cover; background-color: #f8f9fa;">     <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+            <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+            <li><a href="/HTML/about.html">ABOUT</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="/HTML/login.html"><button class="auth-btn" id="login">Log In</button></a>
+            <a href="/HTML/signup.html"><button class="auth-btn" id="signup">Sign Up</button></a>
+        </div>
+    </nav>
+    <div class="container">
+        
+        <h1>Enter Ingredient Details Manually</h1>
+        <form id="manual-entry-form">
+            <label for="ingredient-name">Ingredient Name:</label>
+            <input type="text" id="ingredient-name" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" required>
+
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Grains">Grains</option>
+                <option value="Meat">Meat</option>
+                <option value="Pantry">Pantry</option>
+            </select>
+
+            <label for="storage">Storage Type:</label>
+            <select id="storage">
+                <option value="Pantry">Pantry</option>
+                <option value="Fridge">Fridge</option>
+                <option value="Freezer">Freezer</option>
+            </select>
+
+            <label for="expiration">Expiration Date:</label>
+            <input type="date" id="expiration" required>
+
+            <button type="submit" class="btn">Add Ingredient</button>
+        </form>
+        <button class="btn" onclick="goToDatabase()">View Database</button>
+    </div>
+</body>
+
+</html>

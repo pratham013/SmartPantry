@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Recognition</title>
+    <link rel="stylesheet" href="../CSS/input.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script defer src="../JS/recognition.js"></script>
+</head>
+<body
+    style="background: url('../Images/Background_Img_2.jpg') no-repeat center center fixed; background-size: cover; background-color: #f8f9fa;">
+
+
+    <!-- ✅ Transparent Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../Images/logo.jpg" alt="SmartPantry Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/HTML/recipes.html">RECIPE GENERATOR</a></li>
+            <li><a href="/HTML/barcode.html">BARCODE SCANNER</a></li>
+            <li><a href="/HTML/about.html">ABOUT</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="/HTML/login.html"><button class="auth-btn">Log In</button></a>
+            <a href="/HTML/signup.html"><button class="auth-btn">Sign Up</button></a>
+        </div>
+    </nav>
+
+    <!-- ✅ Two-column layout -->
+    <div class="recognition-container">
+
+        <!-- ✅ Left: Video Container -->
+        <div class="video-container">
+            <video id="webcam" class="video-feed" autoplay playsinline></video>
+            <button class="btn capture-btn" onclick="captureAndDetect()">Capture & Detect</button>
+        </div>
+
+        <!-- ✅ Right: Detected Items -->
+        <div class="controls-container">
+            <h2>Detected Ingredients:</h2>
+            <ul id="detected-items" class="detected-list"></ul>
+
+            <div class="action-buttons">
+                <button class="btn" onclick="addManually()">Enter Manually</button>
+                <button class="btn" onclick="goToDatabase()">Go to Database</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
